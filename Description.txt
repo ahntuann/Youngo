@@ -1,3 +1,36 @@
-test note
+* Mục đích: A place for people to share feelings, experiences about places they have been to.
 
-ok lthao đã nhận được 
+* Tính năng:
+1. NewsFeed
+- Hiển thị những bài đăng mà người dùng có thể quan tâm
+- Tương tác với bài đăng: react, comment, share, save.
+
+2. Tạo bài đăng
+- Review: người dùng đăng trải nghiệm, tips (hình ảnh, video, text,...) + đánh giá địa điểm
+- Question: người dùng đăng bài hỏi về địa điểm
+==> Chọn địa điểm muốn tạo bài đăng về.
+
+3. Xem trải nghiệm của địa danh cụ thể
+- Chọn địa danh muốn xem trải nghiệm từ bản đồ.
+- Hiển thị bài đăng theo tag.
+- Ưu tiên bài đăng theo độ yêu thích và thời gian trải nghiệm (từ thích nhất tới tệ nhất, từ gần nhất tới xa nhất)
+
+4. Nhắn tin
+- Nhắn tin trực tiếp với người dùng.
+- Tham gia và thoát các group chat theo tỉnh thành.
+- Nhắn tin trong group chat.
+
+5. Ranking người dùng
+- Xếp hạng người dùng dựa trên số tỉnh thành, địa danh đã đi.
+
+6. Ranking địa điểm
+- Xếp hạng dựa trên điểm trung bình của các bài đăng về địa điểm.
+
+7. Follow người dùng, địa điểm
+- Cho phép người dùng theo dõi người dùng và địa điểm khác.
+- Hiển thị những bài viết có tag của địa danh, người dùng khác được người dùng theo dõi.
+
+8. Hiển thị những tỉnh thành, địa danh người dùng đã đến trên bản đồ
+- Đổi màu tỉnh thành, địa điểm mà người dùng đã đến.
+- Người dùng tự tick: màu vàng.
+- Có bài đăng chứng thực: màu xanh.
