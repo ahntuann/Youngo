@@ -1,0 +1,29 @@
+.header {
+    height: var(--header-height);
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    align-items: center;
+    z-index: 1;
+}
+
+.header__logo {
+    margin-left: 12px;
+}
+
+.header__logo-img {
+    width: 40px;
+}
+
+.header__description {
+    cursor: pointer;
+}
+
+.header__descrition-text {
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+}

@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #0A0A0A;
+    --background-color: #181818;
+    --border-color: #2D2D2D;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #F3F5F7;
+    --border-color: #dbdbdb;
+    --header-height: 60px;
+    --icon-color-focus: #F3F5F7;
+    --icon-color: #4D4C4E;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+/* keyframes */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

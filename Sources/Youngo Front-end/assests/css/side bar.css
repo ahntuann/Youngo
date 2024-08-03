@@ -1,0 +1,41 @@
+.side-bar {
+    width: var(--header-height);
+    height: 100vh;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    margin-top: var(--header-height);
+}
+
+.side-bar__nav-list {
+    display: block;
+    list-style: none;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(calc(-1 * var(--header-height) / 2));
+}
+
+.side-bar__nav-items {
+    display: block;
+    margin: 20px 0;
+}
+
+.side-bar__nav-icons {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--icon-color);
+    cursor: pointer;
+}
+
+.side-bar__nav-icons--focus {
+    color: var(--icon-color-focus);
+}
+
+.login.logout {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+}
