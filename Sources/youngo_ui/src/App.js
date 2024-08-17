@@ -1,18 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from 'react-router-dom';
 import { publicRoutes } from './routes';
 
 function App() {
     return (
         <Router>
             <div className="App">
-                {publicRoutes.map((route, index) => {
-                    return (
-                        <Link key={index} to={route.path}>
-                            {route.namePage}
-                        </Link>
-                    );
-                })}
-
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
@@ -24,7 +16,7 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout>
+                                    <Layout pageTitle={route.pageTitle}>
                                         <Page />
                                     </Layout>
                                 }

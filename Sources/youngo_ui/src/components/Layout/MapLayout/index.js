@@ -1,7 +1,9 @@
+import { Navbar } from '../components';
+
 function MapLayout({ children }) {
     return (
         <div className="map-layout">
-            <div className="map-container">This is map</div>
+            <Navbar />
             {children}
         </div>
     );
