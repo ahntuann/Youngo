@@ -1,6 +1,4 @@
 .wrapper {
-    --title-height: 21px;
-    --content-width: 650px;
     background-color: var(--background-color);
     width: 100%;
     display: flex;
@@ -37,5 +35,5 @@
     align-items: center;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    box-shadow: inset 0 0 0 0.2px white;
+    border: 0.2px solid var(--border-color);
 }

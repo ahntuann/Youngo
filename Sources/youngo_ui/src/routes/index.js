@@ -20,7 +20,7 @@ export const publicRoutes = [
         iconName: faMagnifyingGlass,
     },
     {
-        path: '/profile',
+        path: '/:nickname',
         component: Profile,
         layout: DefaultLayout,
         pageTitle: 'Trang cá nhân',

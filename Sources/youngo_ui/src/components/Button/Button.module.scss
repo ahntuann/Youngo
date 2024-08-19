@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    width: 70px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+// size
+.large {
+    width: 100px;
+    height: 40px;
+}
+
+// type
+.outline {
+    background-color: transparent;
+    border: 0.2px solid var(--border-color);
+    &:hover {
+        background-color: var(--background-color);
+    }
+}
+
+.solid {
+    background-color: var(--background-color);
+
+    &:hover {
+        background-color: transparent;
+        border: 0.2px solid var(--border-color);
+    }
+}

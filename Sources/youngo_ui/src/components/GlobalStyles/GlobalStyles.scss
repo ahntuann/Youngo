@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Roboto&display=swap');
 
 :root {
+    --border-color: #383839;
+    --navbar-item-height: 50px;
+    --title-height: 21px;
+    --content-width: 650px;
     --navbar-width: 76px;
     --background-color: #0a0a0a;
     --text-color: #f3f4f8;
@@ -29,6 +33,7 @@ input,
 [tabindex] {
     outline: none;
     border: none;
+    color: var(--text-color);
 }
 
 a[href] {

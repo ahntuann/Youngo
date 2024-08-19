@@ -1,0 +1,40 @@
+.wrapper {
+    width: 100%;
+    min-height: calc(100vh - 3 * var(--title-height));
+}
+
+.input-wrapper {
+    height: 85px;
+    border-radius: 25px;
+    border-bottom: 0.2px solid var(--border-color);
+    position: relative;
+}
+
+.input {
+    margin-top: 18px;
+    margin-left: 75px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: var(--navbar-item-height);
+    width: 85%;
+    border-radius: 999px;
+    padding: 0 20px;
+    border: 0.2px solid var(--border-color);
+
+    &:hover,
+    &:focus {
+        outline: 1px solid #f3f5f726;
+    }
+}
+
+.loading,
+.clear {
+    position: absolute;
+    top: calc(var(--navbar-item-height) - 16px);
+    right: 40px;
+    opacity: 0.5;
+}
+
+.search-result {
+    padding: 0 22px;
+}
