@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Model from '../Model';
 
 const cs = classNames.bind(style);
+
 const titleModelFollow = [
     {
         title: 'Thêm vào mục yêu thích',
@@ -22,15 +23,18 @@ const titleModelFollow = [
     },
 ];
 
-function ProfileAccountItem({ user }) {
+function ProfileAccountItem({ user, className }) {
     const [hideFollow, setHideFollow] = useState(() => true);
+    const classes = cs('user-section', {
+        [className]: className,
+    });
 
     function hanldeHideFollow() {
         setHideFollow(true);
     }
 
     return (
-        <div className={cs('user-section')}>
+        <div className={classes}>
             <div className={cs('user-avt')}>
                 <img alt="avt" src={user.avt}></img>
                 <Button outline large title={`Bản đồ`} className={cs('user-map')} />

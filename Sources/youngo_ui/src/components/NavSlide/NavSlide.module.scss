@@ -1,0 +1,29 @@
+.wrapper {
+    position: relative;
+}
+
+.nav-list {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.nav-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.active {
+    opacity: 1;
+}

@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import style from './Profile.module.scss';
 import ProfileAccountItem from '~/components/ProfileAccountItem';
+import NavSlide from '~/components/NavSlide';
+import { currentUser } from '../Home';
 
 const cs = classNames.bind(style);
 
@@ -15,12 +17,35 @@ const user = {
     description: 'The best way to predict the future is to create it🌻',
 };
 
+const navListCurrent = [
+    {
+        title: 'Bài đăng',
+    },
+    {
+        title: 'Đã lưu',
+    },
+    {
+        title: 'Được gắn thẻ',
+    },
+];
+
+const navList = [
+    {
+        title: 'Bài đăng',
+    },
+    {
+        title: 'Được gắn thẻ',
+    },
+];
+
 function Profile() {
     const location = useLocation().pathname;
 
     return (
         <div className={cs('wrapper')}>
-            <ProfileAccountItem user={user} />
+            <ProfileAccountItem user={user} className={cs('profile-account')} />
+
+            <NavSlide navList={location === currentUser ? navListCurrent : navList} className={cs('nav-slide')} />
         </div>
     );
 }

@@ -3,8 +3,17 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     button {
         font-weight: 300;
     }
+}
+
+.profile-account {
+    width: 100%;
+}
+
+.nav-slide {
+    width: 60%;
 }
