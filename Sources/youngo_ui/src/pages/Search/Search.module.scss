@@ -12,7 +12,7 @@
 
 .input {
     margin-top: 18px;
-    margin-left: 75px;
+    margin-left: 60px;
     background-color: var(--background-color);
     color: var(--text-color);
     height: var(--navbar-item-height);
@@ -31,10 +31,6 @@
 .clear {
     position: absolute;
     top: calc(var(--navbar-item-height) - 16px);
-    right: 40px;
+    right: 50px;
     opacity: 0.5;
-}
-
-.search-result {
-    padding: 0 22px;
 }

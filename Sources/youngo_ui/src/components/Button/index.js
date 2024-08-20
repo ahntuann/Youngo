@@ -13,6 +13,7 @@ function Button({ className, title, large, outline, solid, to, href }) {
     });
     const props = {
         to,
+        href,
     };
 
     let But = 'button';

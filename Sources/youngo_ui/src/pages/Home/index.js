@@ -8,4 +8,7 @@ function Home() {
     return <div className={cs('wrapper')}></div>;
 }
 
+const currentUser = '@ahntuann';
+export { currentUser };
+
 export default Home;

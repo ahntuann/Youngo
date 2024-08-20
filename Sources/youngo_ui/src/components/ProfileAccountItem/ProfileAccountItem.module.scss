@@ -1,0 +1,50 @@
+.user-section {
+    display: flex;
+    margin-top: 20px;
+}
+
+.user-avt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-avt img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 5px solid var(--border-color);
+}
+
+.user-detail {
+    flex: 1;
+    margin-left: 60px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-nickname {
+    font-size: 1.3rem;
+}
+
+.user-actions {
+    display: flex;
+}
+
+.user-map {
+    width: 80px;
+}
+
+.user-follow {
+    width: 120px;
+}
+
+.user-des {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    max-width: 50%;
+}
