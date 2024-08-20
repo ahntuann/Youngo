@@ -1,5 +1,11 @@
+import classNames from 'classnames/bind';
+
+import style from './Home.module.scss';
+
+const cs = classNames.bind(style);
+
 function Home() {
-    return <h1>Home Page</h1>;
+    return <div className={cs('wrapper')}></div>;
 }
 
 export default Home;

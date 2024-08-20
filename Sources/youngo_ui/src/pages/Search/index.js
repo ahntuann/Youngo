@@ -5,9 +5,10 @@ import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import style from './Search.module.scss';
 import SearchResult from '~/components/SearchResult';
 import AccountItem from '~/components/AccountItem';
+import { useEffect, useRef, useState } from 'react';
 
 const cs = classNames.bind(style);
-const searchResult = [
+const fakeSearchResult = [
     {
         userName: 'Mai Anh Tuấn',
         nickname: '@ahntuann',
@@ -59,16 +60,43 @@ const searchResult = [
 ];
 
 function Search() {
+    const [searchValue, setSearchValue] = useState(() => '');
+    const [searchResult, setSearchResult] = useState(() => []);
+
+    const inputRef = useRef();
+
+    useEffect(() => {
+        if (!searchValue.trim()) {
+            setSearchResult([]);
+            return;
+        }
+
+        setSearchResult(fakeSearchResult);
+    }, [searchValue]);
+
     return (
         <div className={cs('wrapper')}>
             <div className={cs('input-wrapper')}>
-                <input className={cs('input')} placeholder="Kết nối với mọi người" />
-                <button>
-                    <FontAwesomeIcon className={cs('clear')} icon={faCircleXmark} />
-                </button>
-                <button>
+                <input
+                    ref={inputRef}
+                    className={cs('input')}
+                    placeholder="Kết nối với mọi người"
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                />
+                {searchValue && (
+                    <button
+                        onClick={() => {
+                            inputRef.current.focus();
+                            setSearchValue('');
+                        }}
+                    >
+                        <FontAwesomeIcon className={cs('clear')} icon={faCircleXmark} />
+                    </button>
+                )}
+                {/* <button>
                     <FontAwesomeIcon className={cs('loading')} icon={faSpinner} />
-                </button>
+                </button> */}
             </div>
 
             <div className={cs('search-result')}>
