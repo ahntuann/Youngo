@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const cs = classNames.bind(style);
 
-function Button({ className, title, large, outline, solid, to, href }) {
+function Button({ className, title, large, outline, solid, to, href, onClick }) {
     const classes = cs('wrapper', {
         [className]: className,
         large,
@@ -14,6 +14,7 @@ function Button({ className, title, large, outline, solid, to, href }) {
     const props = {
         to,
         href,
+        onClick,
     };
 
     let But = 'button';

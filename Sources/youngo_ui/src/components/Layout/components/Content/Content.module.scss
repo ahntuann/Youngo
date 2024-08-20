@@ -31,7 +31,7 @@
     padding: 0 20px;
     width: 100%;
     margin-top: calc((var(--title-height) * 3));
-    background-color: #1d1c1c;
+    background-color: var(--backgroung-content-color);
     width: var(--content-width);
     display: flex;
     flex-direction: column;

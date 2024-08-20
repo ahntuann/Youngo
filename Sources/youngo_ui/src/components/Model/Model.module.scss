@@ -1,0 +1,35 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+}
+
+.content {
+    width: 350px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.model-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+    border-bottom: 0.5px solid var(--border-color);
+
+    &:hover {
+        background-color: rgb(21, 20, 20);
+    }
+}
+
+.hide {
+    display: none;
+}
