@@ -46,12 +46,12 @@ function PostItem({ posts }) {
 
                             <div className={cs('post-action')}>
                                 <div className={cs('post-reaction')}>
-                                    <div className={cs('post-like')}>
+                                    <div className={cs('post-like', 'action-item')}>
                                         <FontAwesomeIcon className={cs('react-icon', 'like-btn')} icon={faHeart} />
                                         <p className={cs('like-count')}>{post.reactions.likes}</p>
                                     </div>
 
-                                    <div className={cs('post-dislike')}>
+                                    <div className={cs('post-dislike', 'action-item')}>
                                         <FontAwesomeIcon
                                             className={cs('react-icon', 'dislike-btn')}
                                             icon={faHeartBroken}
@@ -60,11 +60,11 @@ function PostItem({ posts }) {
                                     </div>
                                 </div>
 
-                                <div className={cs('post-comment')}>
+                                <div className={cs('post-comment', 'action-item')}>
                                     <FontAwesomeIcon className={cs('react-icon', 'comment-btn')} icon={faComment} />
                                 </div>
 
-                                <div className={cs('post-share')}>
+                                <div className={cs('post-share', 'action-item')}>
                                     <FontAwesomeIcon className={cs('react-icon', 'share-btn')} icon={faShare} />
                                 </div>
                             </div>

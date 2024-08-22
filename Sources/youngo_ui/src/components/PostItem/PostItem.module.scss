@@ -1,0 +1,74 @@
+.wrapper {
+    --user-avt-width: 44px;
+    width: 95%;
+}
+
+.post-section {
+    margin-left: calc(10px + var(--user-avt-width));
+}
+
+.post-item {
+    padding: 20px 0 20px 0;
+    border-bottom: 0.5px solid var(--border-color);
+}
+
+.wrapper-user {
+    display: flex;
+    align-items: start;
+}
+
+.user-avt {
+    width: var(--user-avt-width);
+    height: var(--user-avt-width);
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.user-name {
+    text-align: start;
+    margin-left: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.post-section {
+    margin-top: 10px;
+}
+
+.post-action {
+    display: flex;
+    justify-content: end;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.post-reaction {
+    display: flex;
+}
+
+.post-like,
+.post-dislike {
+    display: flex;
+    align-items: center;
+}
+
+.like-count {
+    height: 100%;
+}
+
+.action-item {
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.react-icon {
+    margin-right: 4px;
+}
+
+.like-count {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
