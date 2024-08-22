@@ -7,7 +7,7 @@ const cs = classNames.bind(style);
 function UserItem({ user }) {
     return (
         <div className={cs('wrapper-user')}>
-            {user && <img className={cs('user-avt')} src={user.image} />}
+            {user && <img className={cs('user-avt')} src={user.image} alt="" />}
             {user && <h4 className={cs('user-name')}>@{user.username}</h4>}
         </div>
     );
