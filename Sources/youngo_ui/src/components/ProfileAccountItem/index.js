@@ -34,39 +34,43 @@ function ProfileAccountItem({ user, className }) {
     }
 
     return (
-        <div className={classes}>
-            <div className={cs('user-avt')}>
-                <img alt="avt" src={user.avt}></img>
-                <Button outline large title={`Bản đồ`} className={cs('user-map')} />
-            </div>
-
-            <div className={cs('user-detail')}>
-                <div className={cs('user-info')}>
-                    <div className={cs('user-name')}>
-                        <h4 className={cs('user-fullname')}>{user.userName}</h4>
-                        <p className={cs('user-nickname')}>{user.nickname}</p>
+        <div className={cs('wrapper')}>
+            {user && (
+                <div className={classes}>
+                    <div className={cs('user-avt')}>
+                        <img alt="avt" src={user.image}></img>
+                        <Button outline large title={`Bản đồ`} className={cs('user-map')} />
                     </div>
 
-                    <div className={cs('user-actions')}>
-                        {currentUser === user.nickname && <Button outline title={`Chỉnh sửa`} />}
-                        {currentUser !== user.nickname && (
-                            <Button
-                                outline
-                                title="Đang theo dõi"
-                                className={cs('user-follow')}
-                                onClick={() => setHideFollow(false)}
-                            />
-                        )}
-                        {currentUser !== user.nickname && (
-                            <Button outline title="Nhắn tin" className={cs('user-text')} />
-                        )}
+                    <div className={cs('user-detail')}>
+                        <div className={cs('user-info')}>
+                            <div className={cs('user-name')}>
+                                <h4 className={cs('user-fullname')}>{user.firstName + ' ' + user.lastName}</h4>
+                                <p className={cs('user-nickname')}>{user.username}</p>
+                            </div>
+
+                            <div className={cs('user-actions')}>
+                                {currentUser === user.nickname && <Button outline title={`Chỉnh sửa`} />}
+                                {currentUser !== user.nickname && (
+                                    <Button
+                                        outline
+                                        title="Đang theo dõi"
+                                        className={cs('user-follow')}
+                                        onClick={() => setHideFollow(false)}
+                                    />
+                                )}
+                                {currentUser !== user.nickname && (
+                                    <Button outline title="Nhắn tin" className={cs('user-text')} />
+                                )}
+                            </div>
+                        </div>
+
+                        <p className={cs('user-des')}>{user.description}</p>
                     </div>
+
+                    <Model titleModelFollow={titleModelFollow} hide={hideFollow} hanldeHideFollow={hanldeHideFollow} />
                 </div>
-
-                <p className={cs('user-des')}>{user.description}</p>
-            </div>
-
-            <Model titleModelFollow={titleModelFollow} hide={hideFollow} hanldeHideFollow={hanldeHideFollow} />
+            )}
         </div>
     );
 }
