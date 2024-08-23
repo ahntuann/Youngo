@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 0.5px solid var(--border-color);
+}
+
+.noti-body {
+    display: flex;
+}
+
+.user-avt {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.noti-detail {
+    margin-left: 10px;
+}
+
+.noti-content {
+    display: flex;
+}
+
+.user-name {
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.noti-text {
+    margin-left: 0.5rem;
+    font-weight: 300;
+}
+
+.noti-time {
+    color: #a8a8a8;
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
+
+.noti-img img {
+    width: 40px;
+    height: 40px;
+}
