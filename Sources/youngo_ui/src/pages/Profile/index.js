@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import style from './Profile.module.scss';
 import ProfileAccountItem from '~/components/ProfileAccountItem';
 import NavSlide from '~/components/NavSlide';
-import { currentUser } from '../Home';
+import { currentUser } from '~/pages/Home';
 import { useEffect, useRef, useState } from 'react';
 import PostItems from '~/components/PostItems';
 

@@ -13,10 +13,11 @@ const cs = classNames.bind(style);
 function Search() {
     const [searchValue, setSearchValue] = useState(() => '');
     const [searchResult, setSearchResult] = useState(() => []);
+    const [isLoading, setIsLoading] = useState(() => false);
 
     const inputRef = useRef();
 
-    const debounce = myUseDebounce(searchValue, 800);
+    const debounce = myUseDebounce(searchValue, 600);
 
     useEffect(() => {
         if (!debounce.trim()) {
@@ -25,13 +26,15 @@ function Search() {
         }
 
         async function fetchSearch() {
+            setIsLoading((prev) => true);
             const res = await fetch(`https://dummyjson.com/users/search?q=${debounce}`);
             const user = await res.json();
+            setSearchResult(user.users);
 
-            return user;
+            setIsLoading(false);
         }
 
-        fetchSearch().then((user) => setSearchResult(user.users));
+        fetchSearch();
     }, [debounce]);
 
     return (
@@ -46,7 +49,7 @@ function Search() {
                         setSearchValue(e.target.value);
                     }}
                 />
-                {searchValue && (
+                {!isLoading && searchValue && (
                     <button
                         onClick={() => {
                             inputRef.current.focus();
@@ -56,9 +59,11 @@ function Search() {
                         <FontAwesomeIcon className={cs('clear')} icon={faCircleXmark} />
                     </button>
                 )}
-                {/* <button>
-                    <FontAwesomeIcon className={cs('loading')} icon={faSpinner} />
-                </button> */}
+                {isLoading && (
+                    <button>
+                        <FontAwesomeIcon className={cs('loading')} icon={faSpinner} />
+                    </button>
+                )}
             </div>
 
             <div className={cs('search-result')}>

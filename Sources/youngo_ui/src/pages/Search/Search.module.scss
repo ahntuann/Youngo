@@ -34,3 +34,16 @@
     right: 50px;
     opacity: 0.5;
 }
+
+.loading {
+    animation: rotateLoad 0.2s linear;
+}
+
+@keyframes rotateLoad {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
