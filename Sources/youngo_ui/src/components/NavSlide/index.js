@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
 
 import style from './NavSlide.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 const cs = classNames.bind(style);
 
-function NavSlide({ navList = [], className }) {
+const NavSlide = forwardRef(({ navList = [], className, handleClickNav }, ref) => {
     const navItemRefs = useRef([]);
     const navTopRef = useRef();
 
@@ -29,6 +29,16 @@ function NavSlide({ navList = [], className }) {
         });
     }, []);
 
+    useImperativeHandle(
+        ref,
+        () => ({
+            navTopRef,
+            navItemRefs: navItemRefs.current,
+            csNavSlide: cs,
+        }),
+        [active, navTopRef.current],
+    );
+
     return (
         <div className={classes}>
             <div ref={navTopRef} className={cs('nav-top')}></div>
@@ -44,6 +54,7 @@ function NavSlide({ navList = [], className }) {
                         })}
                         onClick={() => {
                             setActive(index);
+                            handleClickNav(index);
                         }}
                     >
                         <div className={cs('nav-title')}>{nav.title}</div>
@@ -52,6 +63,6 @@ function NavSlide({ navList = [], className }) {
             </div>
         </div>
     );
-}
+});
 
 export default NavSlide;

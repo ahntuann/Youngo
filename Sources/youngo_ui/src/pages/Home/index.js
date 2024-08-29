@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import style from './Home.module.scss';
 import { useEffect, useState } from 'react';
-import PostItem from '~/components/PostItem';
+import PostItems from '~/components/PostItems';
 
 const cs = classNames.bind(style);
 
@@ -13,7 +13,6 @@ function Home() {
     const [page, setPage] = useState(() => 1);
 
     useEffect(() => {
-        console.log(isLoading);
         function handleScroll() {
             if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight)
                 setPage((prev) => prev + 1);
@@ -48,7 +47,7 @@ function Home() {
         fetchPosts();
     }, [page]);
 
-    return <div className={cs('wrapper')}>{<PostItem posts={curPosts} />}</div>;
+    return <div className={cs('wrapper')}>{<PostItems posts={curPosts} />}</div>;
 }
 
 const currentUser = '/@babibong_28';
