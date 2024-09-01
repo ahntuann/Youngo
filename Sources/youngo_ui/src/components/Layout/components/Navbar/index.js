@@ -36,7 +36,7 @@ function Navbar() {
                                     setActive(route.path);
                                 }}
                             >
-                                <FontAwesomeIcon icon={route.iconName} />
+                                <FontAwesomeIcon icon={route?.iconName} />
                             </Link>
                         );
                     })}

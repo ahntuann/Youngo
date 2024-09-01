@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { DefaultLayout, MapLayout } from '~/components/Layout';
-import { Home, Search, Profile, Activity, Messenger, Map } from '~/pages';
+import { Home, Search, Profile, Activity, Messenger, Post, Map } from '~/pages';
 
 export const publicRoutes = [
     { path: '/', component: Home, layout: DefaultLayout, pageTitle: 'Khám phá', iconName: faHouse },
@@ -38,6 +38,13 @@ export const publicRoutes = [
         component: Messenger,
         layout: DefaultLayout,
         pageTitle: 'Tin nhắn',
+        iconName: faComment,
+    },
+    {
+        path: '/:nickname/post/:postID',
+        component: Post,
+        layout: DefaultLayout,
+        pageTitle: 'Bài viết',
         iconName: faComment,
     },
     { path: '/map', component: Map, layout: MapLayout, pageTitle: 'Bản đồ', iconName: faEarthAmerica },

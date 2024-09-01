@@ -10,6 +10,7 @@
 .post-item {
     padding: 20px 0 20px 0;
     border-bottom: 0.5px solid var(--border-color);
+    display: block;
 }
 
 .wrapper-user {
@@ -31,6 +32,10 @@
     font-size: 1.6rem;
     font-weight: 500;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .post-section {

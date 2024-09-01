@@ -5,18 +5,21 @@ import classNames from 'classnames/bind';
 
 import UserItem from '~/components/PostItems/UserItem';
 import style from '~/components/PostItems/PostItem.module.scss';
+import { Link } from 'react-router-dom';
 
 const cs = classNames.bind(style);
 
 function PostItem({ post, users }) {
+    const user = users.find((user) => user && user?.id === post?.userId);
+
     return (
-        <div className={cs('post-item')}>
+        <Link to={`@${user && user?.username}/post/${post?.id}`} className={cs('post-item')}>
             <div className={cs('user-section')}>
-                <UserItem user={users.find((user) => user && user.id === post.userId)} />
+                <UserItem user={user} />
             </div>
             <div className={cs('post-section')}>
                 <div className={cs('post-body')}>
-                    <p className={cs('body-text')}>{post.body}</p>
+                    <p className={cs('body-text')}>{post?.body}</p>
                     {/* <img className={cs('body-img')} src=""></img> */}
                 </div>
 
@@ -24,12 +27,12 @@ function PostItem({ post, users }) {
                     <div className={cs('post-reaction')}>
                         <div className={cs('post-like', 'action-item')}>
                             <FontAwesomeIcon className={cs('react-icon', 'like-btn')} icon={faHeart} />
-                            <p className={cs('like-count')}>{post.reactions.likes}</p>
+                            <p className={cs('like-count')}>{post?.reactions.likes}</p>
                         </div>
 
                         <div className={cs('post-dislike', 'action-item')}>
                             <FontAwesomeIcon className={cs('react-icon', 'dislike-btn')} icon={faHeartBroken} />
-                            <p className={cs('like-count')}>{post.reactions.dislikes}</p>
+                            <p className={cs('like-count')}>{post?.reactions.dislikes}</p>
                         </div>
                     </div>
 
@@ -42,7 +45,7 @@ function PostItem({ post, users }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
