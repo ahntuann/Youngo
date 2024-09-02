@@ -4,13 +4,12 @@ import style from './Post.module.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostItems from '~/components/PostItems';
+import Comments from '~/components/Comments';
 
 const cs = classNames.bind(style);
 
 function Post() {
-    const { nickname, postID } = useParams();
-
-    const [user, setUser] = useState(() => []);
+    const { postID } = useParams();
     const [post, setPost] = useState(() => []);
 
     useEffect(() => {
@@ -24,20 +23,11 @@ function Post() {
         fetchPost();
     }, []);
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            const res = await fetch(`https://dummyjson.com/users/filter?key=username&value=${nickname.slice(1)}`);
-            const user = await res.json();
-
-            setUser(user.users);
-        };
-
-        fetchUser();
-    }, []);
-
     return (
         <div className={cs('wrapper')}>
             <PostItems posts={post} />
+
+            {post.length > 0 && <Comments postID={post[0].id} limit={10} />}
         </div>
     );
 }
