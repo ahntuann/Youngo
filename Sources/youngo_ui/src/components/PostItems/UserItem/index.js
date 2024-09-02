@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import style from '../PostItem.module.scss';
 
@@ -7,11 +7,13 @@ const cs = classNames.bind(style);
 
 function UserItem({ user }) {
     const navigate = useNavigate();
+    const location = useLocation();
 
     function handleNavigate(e) {
         e.preventDefault();
         e.stopPropagation();
-        navigate(`/@${user.username}`);
+
+        if (location.pathname !== `/@${user.username}`) navigate(`/@${user.username}`);
     }
 
     return (

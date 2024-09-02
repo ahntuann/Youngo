@@ -13,7 +13,7 @@ function PostItem({ post, users }) {
     const user = users.find((user) => user && user?.id === post?.userId);
 
     return (
-        <Link to={`@${user && user?.username}/post/${post?.id}`} className={cs('post-item')}>
+        <Link to={`/@${user && user?.username}/post/${post?.id}`} className={cs('post-item')}>
             <div className={cs('user-section')}>
                 <UserItem user={user} />
             </div>
