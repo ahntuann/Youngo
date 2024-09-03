@@ -45,7 +45,6 @@ export const publicRoutes = [
         component: Post,
         layout: DefaultLayout,
         pageTitle: 'Bài viết',
-        iconName: faComment,
     },
     { path: '/map', component: Map, layout: MapLayout, pageTitle: 'Bản đồ', iconName: faEarthAmerica },
 ];

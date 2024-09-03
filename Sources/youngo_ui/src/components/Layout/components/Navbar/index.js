@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './Navbar.module.scss';
 import { publicRoutes } from '~/routes';
 import { useState } from 'react';
+import { Post } from '~/pages';
 
 const cs = classNames.bind(style);
 
@@ -24,21 +25,22 @@ function Navbar() {
             <div className={cs('nav-container')}>
                 <div className={cs('nav-list')}>
                     {publicRoutes.map((route, index) => {
-                        return (
-                            <Link
-                                to={route.path}
-                                key={index}
-                                className={cs('nav-item', {
-                                    active: isActive(route),
-                                    moving: route.path === '/search' && location === route.path,
-                                })}
-                                onClick={() => {
-                                    setActive(route.path);
-                                }}
-                            >
-                                <FontAwesomeIcon icon={route?.iconName} />
-                            </Link>
-                        );
+                        if (route.component !== Post)
+                            return (
+                                <Link
+                                    to={route.path}
+                                    key={index}
+                                    className={cs('nav-item', {
+                                        active: isActive(route),
+                                        moving: route.path === '/search' && location === route.path,
+                                    })}
+                                    onClick={() => {
+                                        setActive(route.path);
+                                    }}
+                                >
+                                    <FontAwesomeIcon icon={route?.iconName} />
+                                </Link>
+                            );
                     })}
                 </div>
             </div>
